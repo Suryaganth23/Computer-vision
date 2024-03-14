@@ -1,0 +1,15 @@
+import cv2
+import numpy as np
+cap = cv2.VideoCapture("C:/Users/surya/Downloads/Snapinsta.app_video_10000000_421003623626593_6425060908360873777_n.mp4")
+if (cap.isOpened()== False):
+    print("Error opening video file")
+while(cap.isOpened()):
+    ret, frame = cap.read()
+    if ret == True:
+        cv2.imshow('Frame', frame)
+        if cv2.waitKey(250) & 0xFF == ord('q'):
+            break
+    else:
+        break
+cap.release()
+cv2.destroyAllWindows()
